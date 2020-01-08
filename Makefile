@@ -6,7 +6,7 @@
 #    By: rsteigen <rsteigen@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/01/03 13:56:54 by rsteigen       #+#    #+#                 #
-#    Updated: 2020/01/06 13:59:08 by rsteigen      ########   odam.nl          #
+#    Updated: 2020/01/08 12:09:00 by rsteigen      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fractol
 LIBFT = libft/
 MINILIBX = minilibx_macos/
 FLAGS = -Wall -Wextra -Werror
-FUNCS = setup.c color.c draw.c events.c free.c close.c settings.c
+FUNCS = setup.c color.c draw.c events.c free.c close.c settings.c bits.c
 
 all: $(NAME)
 .PHONY: all

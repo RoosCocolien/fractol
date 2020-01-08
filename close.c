@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/05 16:48:36 by rsteigen       #+#    #+#                */
-/*   Updated: 2020/01/06 12:29:38 by rsteigen      ########   odam.nl         */
+/*   Updated: 2020/01/07 17:09:08 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int		close_fractol(t_fractol *start)
 {
-	printf("ESCAPE\ncolor: %#x\n", start->point->color_end);
 	free_fractol_struct(start);
 	exit(0);
 }

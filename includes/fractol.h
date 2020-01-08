@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/03 14:10:26 by rsteigen       #+#    #+#                */
-/*   Updated: 2020/01/06 14:29:07 by rsteigen      ########   odam.nl         */
+/*   Updated: 2020/01/08 17:59:16 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,24 @@
 # include "../minilibx_macos/mlx.h"
 
 /*
-** # include "../minilibx_macos/mlx_new_window.h"
-** # include "../minilibx_macos/mlx_int.h"
+** include "../minilibx_macos/mlx_new_window.h"
+** include "../minilibx_macos/mlx_int.h"
 */
 
 # define WIN_WIDTH 2000
 # define WIN_HEIGHT 1200
-# define MOUSE_CLICK_LEFT 1
+
+/*
+** events (toggles)
+** flag positions
+*/
+# define MOUSE_CLICKED_LEFT 31
+# define SPACEBAR 30
+
+/*
+**	keys
+*/
+# define MOUSE_BUTTON_L 1
 # define RETURN 36
 # define SPACE 49
 # define ESCAPE 53
@@ -39,42 +50,36 @@
 # define KEY_DOWN 125
 # define KEY_UP 126
 
-typedef struct	s_color
+typedef struct		s_color
 {
-	int			red;
-	int			green;
-	int			blue;
-	int			start;
-	int			end;
-	double		percentage;
-}				t_color;
+	int				red;
+	int				green;
+	int				blue;
+	int				start;
+	int				end;
+	double			percentage;
+}					t_color;
 
-typedef struct	s_events
+typedef struct		s_point
 {
-	int			mouse_click_left;
-	int			space;
-}				t_events;
+	int				color;
+	int				color_end;
+	int				x;
+	int				y;
+}					t_point;
 
-typedef struct	s_point
+typedef struct		s_fractol
 {
-	int			color;
-	int			color_end;
-	int			x;
-	int			y;
-}				t_point;
-
-typedef struct	s_fractol
-{
-	void		*mlx;
-	void		*win;
-	void		*img;
-	char		*data_addr;
-	int			bits_per_pixel;
-	int			size_line;
-	int			endian;
-	t_events	*events;
-	t_point		*point;
-}				t_fractol;
+	void			*mlx;
+	void			*win;
+	void			*img;
+	char			*data_addr;
+	int				bits_per_pixel;
+	int				size_line;
+	int				endian;
+	unsigned int	events;
+	t_point			*point;
+}					t_fractol;
 
 /*
 **	start
@@ -87,19 +92,22 @@ int				setup(int parameter);
 int				mouse_press(int button, int x, int y, t_fractol *start);
 int				deal_key(int keycode, t_fractol *start);
 int				expose(t_fractol *start);
+int				mouse_movement(int x, int y, t_fractol *start);
+int				mouse_release(int button, int x, int y, t_fractol *start);
 
 /*
 **	draw
 */
 void			put_pixel_to_img(t_fractol *start, int x, int y, int color);
-void			draw(t_fractol *start);
+int				draw(t_fractol *start);
+void			put_pixel(t_fractol *start, int x, int y, int color);
 
 /*
 **	color
 */
 double			get_percentage(int start, int end, int current);
 int				get_intensity(int start, int end, double percentage);
-int				create_color_for_pixel(t_fractol *start);
+void			create_color_for_pixel(t_fractol *start);
 
 /*
 **	free && close
@@ -111,5 +119,14 @@ int				close_fractol(t_fractol *start);
 **	settings
 */
 void			set_fractol_to_zero(t_fractol *start);
+
+/*
+**	bits
+*/
+void			set_bit(unsigned int *number, int position);
+void			clear_bit(unsigned int *number, int position);
+void			toggle_bit(unsigned int *number, int position);
+int				check_bit(unsigned int number, int position);
+void			print_bits(unsigned int nb, int bytes);
 
 #endif
