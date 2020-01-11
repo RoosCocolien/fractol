@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/03 14:10:26 by rsteigen       #+#    #+#                */
-/*   Updated: 2020/01/08 17:59:16 by rsteigen      ########   odam.nl         */
+/*   Updated: 2020/01/11 12:28:30 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
 ** include "../minilibx_macos/mlx_int.h"
 */
 
-# define WIN_WIDTH 2000
-# define WIN_HEIGHT 1200
+# define WIN_WIDTH 2400
+# define WIN_HEIGHT 1600
 
 /*
 ** events (toggles)
@@ -101,6 +101,7 @@ int				mouse_release(int button, int x, int y, t_fractol *start);
 void			put_pixel_to_img(t_fractol *start, int x, int y, int color);
 int				draw(t_fractol *start);
 void			put_pixel(t_fractol *start, int x, int y, int color);
+void			draw_mandelbrot(t_fractol *start);
 
 /*
 **	color
