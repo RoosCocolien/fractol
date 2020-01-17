@@ -5,8 +5,8 @@
 #                                                      +:+                     #
 #    By: rsteigen <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
-#    Created: 2019/01/11 09:13:32 by rsteigen      #+#    #+#                  #
-#    Updated: 2019/05/28 11:06:54 by rsteigen      ########   odam.nl          #
+#    Created: 2019/01/11 09:13:32 by rsteigen       #+#    #+#                 #
+#    Updated: 2020/01/15 11:31:24 by rsteigen      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ FUNCTIONS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c\
 			ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c\
 			ft_islower.c ft_isupper.c ft_lstpushback.c ft_print_list.c\
 			ft_lstlen.c ft_calc.c ft_prime_check.c ft_sqrt.c get_next_line.c\
-			ft_abs.c ft_itoa_base.c
+			ft_abs.c ft_itoa_base.c ft_fabs.c
 
 all: $(NAME)
 

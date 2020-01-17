@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: rsteigen <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/01/11 09:13:47 by rsteigen      #+#    #+#                 */
-/*   Updated: 2019/05/28 11:08:08 by rsteigen      ########   odam.nl         */
+/*   Created: 2019/01/11 09:13:47 by rsteigen       #+#    #+#                */
+/*   Updated: 2020/01/15 11:31:47 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef union		u_float
+{
+	long double		floatnb;
+	short			float_short[5];
+}					t_float;
 
 size_t				ft_strlen(const char *s);
 void				ft_putchar(char c);
@@ -96,6 +102,7 @@ int					ft_lstlen(t_list *list);
 int					ft_prime_check(int nb);
 int					ft_sqrt(int nb);
 int					get_next_line(const int fd, char **line);
-int					ft_abs(int nb);
+long long			ft_abs(long long nb);
+long double			ft_fabs(long double nb);
 
 #endif

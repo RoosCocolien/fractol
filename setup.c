@@ -6,26 +6,47 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/03 14:35:03 by rsteigen       #+#    #+#                */
-/*   Updated: 2020/01/08 18:36:10 by rsteigen      ########   odam.nl         */
+/*   Updated: 2020/01/15 16:54:07 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/fractol.h"
 
-int		setup(int picked_color)
+void	check_start_fractal(t_setup *start, char *fractal)
 {
-	t_fractol	*start;
-	t_point		cord;
+	if (ft_strcmp(fractal, "Mandelbrot") == 0)
+	{
+		set_bit(&start->events, MANDELBROT);
+	}
+	else if (ft_strcmp(fractal, "Julia") == 0)
+	{
+		set_bit(&start->events, JULIA);
+	}
+	else
+	{
+		set_bit(&start->events, SHIP);
+	}
+}
 
-	start = (t_fractol*)ft_memalloc(sizeof(t_fractol));
+int		setup(char *fractal_name)
+{
+	t_setup		*start;
+	t_point		cord;
+	t_fractal	fractal_info;
+
+	start = (t_setup*)ft_memalloc(sizeof(t_setup));
 	start->point = &cord;
-	set_fractol_to_zero(start);
+	start->fractal = &fractal_info;
+	set_setup_to_zero(start);
 	start->mlx = mlx_init();
-	start->win = mlx_new_window(start->mlx, WIN_WIDTH, WIN_HEIGHT, "FRACTOL");
+	start->win = mlx_new_window(start->mlx, WIN_WIDTH + 400,\
+	WIN_HEIGHT, "FRACTOL");
 	start->img = mlx_new_image(start->mlx, WIN_WIDTH, WIN_HEIGHT);
-	start->point->color_end = picked_color;
+	start->point->color_middle = RED;
+	start->point->color_end = YELLOW;
 	start->data_addr = mlx_get_data_addr(start->img, &start->bits_per_pixel,\
 	&start->size_line, &start->endian);
+	check_start_fractal(start, fractal_name);
 	mlx_loop_hook(start->mlx, draw, start);
 	mlx_loop(start->mlx);
 	return (0);

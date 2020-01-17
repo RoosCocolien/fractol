@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/08 11:33:43 by rsteigen       #+#    #+#                */
-/*   Updated: 2020/01/08 18:35:40 by rsteigen      ########   odam.nl         */
+/*   Updated: 2020/01/16 11:46:15 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	set_bit(unsigned int *number, int position)
 **	1U stands for an empty unsigned int
 **	[00000000 00000000 00000000 00000000]
 **	Go to the right position
-**	
 */
+
 void	clear_bit(unsigned int *number, int position)
 {
 	*number &= ~(1U << position);
