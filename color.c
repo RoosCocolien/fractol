@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/05 12:18:02 by rsteigen       #+#    #+#                */
-/*   Updated: 2020/01/16 14:46:32 by rsteigen      ########   odam.nl         */
+/*   Updated: 2020/01/20 19:00:08 by rooscocolie   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,10 @@ int			pick_color_iterations(t_setup *start, int iterations,\
 	}
 	else
 	{
+		iterations = iterations - (max_iter / 4);
 		color.start = start->point->color_middle;
 		color.end = start->point->color_end;
-		color.percentage = ((double)iterations / (max_iter / 4 * 3));
+		color.percentage = ((double)iterations / (((double)max_iter / 4) * 3));
 	}
 	color.red = get_intensity((color.start >> 16) & 0xff,\
 	(color.end >> 16) & 0xff, color.percentage);

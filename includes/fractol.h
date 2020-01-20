@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/03 14:10:26 by rsteigen       #+#    #+#                */
-/*   Updated: 2020/01/16 15:02:50 by rsteigen      ########   odam.nl         */
+/*   Updated: 2020/01/18 13:51:39 by rooscocolie   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@
 ** include "../minilibx_macos/mlx_int.h"
 */
 
-# define WIN_WIDTH 1200
-# define WIN_WIDTH_HALF 600
-# define WIN_HEIGHT 1200
-# define WIN_HEIGHT_HALF 600
+# define WIN_WIDTH 600
+# define WIN_WIDTH_HALF 300
+# define WIN_HEIGHT 600
+# define WIN_HEIGHT_HALF 300
 
 /*
 ** events (toggles)
