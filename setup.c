@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/03 14:35:03 by rsteigen       #+#    #+#                */
-/*   Updated: 2020/01/15 16:54:07 by rsteigen      ########   odam.nl         */
+/*   Updated: 2020/01/22 11:20:05 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		setup(char *fractal_name)
 	WIN_HEIGHT, "FRACTOL");
 	start->img = mlx_new_image(start->mlx, WIN_WIDTH, WIN_HEIGHT);
 	start->point->color_middle = RED;
-	start->point->color_end = YELLOW;
+	start->point->color_inside = YELLOW;
 	start->data_addr = mlx_get_data_addr(start->img, &start->bits_per_pixel,\
 	&start->size_line, &start->endian);
 	check_start_fractal(start, fractal_name);

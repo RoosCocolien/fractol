@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/05 11:18:47 by rsteigen       #+#    #+#                */
-/*   Updated: 2020/01/20 17:00:09 by rooscocolie   ########   odam.nl         */
+/*   Updated: 2020/01/22 12:38:23 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,19 @@ int			deal_key(int keycode, t_setup *start)
 		printf("start->fractal->y_julia: %f\n", start->fractal->y_julia);
 	}
 	if (keycode == KEY_Q)
-		start->point->color_begin = BLACK;
+		start->point->color_outside = BLACK;
 	if (keycode == KEY_W)
-		start->point->color_begin = DARK_RED;
+		start->point->color_outside = DARK_RED;
 	if (keycode == KEY_E)
-		start->point->color_begin = DARK_GREEN;
+		start->point->color_outside = DARK_GREEN;
 	if (keycode == KEY_R)
-		start->point->color_begin = DARK_BLUE;
+		start->point->color_outside = DARK_BLUE;
 	if (keycode == KEY_T)
-		start->point->color_begin = DIRTY_YELLOW;
+		start->point->color_outside = DIRTY_YELLOW;
 	if (keycode == KEY_Y)
-		start->point->color_begin = DARK_PURPLE;
+		start->point->color_outside = DARK_PURPLE;
 	if (keycode == KEY_U)
-		start->point->color_begin = WHITE;
+		start->point->color_outside = WHITE;
 	if (keycode == KEY_1)
 		start->point->color_middle = RED;
 	if (keycode == KEY_2)
@@ -50,17 +50,17 @@ int			deal_key(int keycode, t_setup *start)
 	if (keycode == KEY_6)
 		start->point->color_middle = SOFT_GREEN;
 	if (keycode == KEY_A)
-		start->point->color_end = LIGHT_BLUE;
+		start->point->color_inside = LIGHT_BLUE;
 	if (keycode == KEY_S)
-		start->point->color_end = YELLOW;
+		start->point->color_inside = YELLOW;
 	if (keycode == KEY_D)
-		start->point->color_end = DIRTY_GREEN;
+		start->point->color_inside = DIRTY_GREEN;
 	if (keycode == KEY_F)
-		start->point->color_end = PINK;
+		start->point->color_inside = PINK;
 	if (keycode == KEY_G)
-		start->point->color_end = ORANGE;
+		start->point->color_inside = ORANGE;
 	if (keycode == KEY_H)
-		start->point->color_end = WHITE;
+		start->point->color_inside = WHITE;
 	if (keycode == KEY1_R)
 	{
 		reset_fractal(start);

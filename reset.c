@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/15 19:34:53 by rsteigen       #+#    #+#                */
-/*   Updated: 2020/01/16 14:44:52 by rsteigen      ########   odam.nl         */
+/*   Updated: 2020/01/22 11:20:05 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	reset_fractal(t_setup *start)
 	clear_bit(&start->events, RAINBOW);
 	start->fractal->x_julia = -0.7;
 	start->fractal->y_julia = 0.27015;
-	start->point->color_begin = BLACK;
+	start->point->color_outside = BLACK;
 	start->point->color_middle = OLD_PINK;
-	start->point->color_end = LIGHT_BLUE;
+	start->point->color_inside = LIGHT_BLUE;
 }

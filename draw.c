@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/05 11:15:20 by rsteigen       #+#    #+#                */
-/*   Updated: 2020/01/16 13:33:57 by rsteigen      ########   odam.nl         */
+/*   Updated: 2020/01/22 15:46:23 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,11 @@ void	put_pixel_to_img(t_setup *start, int x, int y, int color)
 void	draw_fractal(t_setup *start)
 {
 	if (start->events >> MANDELBROT & 1U)
+	{
+		start->point->position_x = 4.0 / WIN_WIDTH * start->fractal->zoom;
+		start->point->position_y = 4.0 / WIN_HEIGHT * start->fractal->zoom;
 		draw_mandelbrot(start);
+	}
 	else if (start->events >> JULIA & 1U)
 		draw_julia(start);
 	else

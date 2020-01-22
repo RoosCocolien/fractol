@@ -6,7 +6,7 @@
 /*   By: rsteigen <rsteigen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/03 14:10:26 by rsteigen       #+#    #+#                */
-/*   Updated: 2020/01/18 13:51:39 by rooscocolie   ########   odam.nl         */
+/*   Updated: 2020/01/22 15:41:16 by rsteigen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@
 ** include "../minilibx_macos/mlx_int.h"
 */
 
-# define WIN_WIDTH 600
-# define WIN_WIDTH_HALF 300
-# define WIN_HEIGHT 600
-# define WIN_HEIGHT_HALF 300
+# define WIN_WIDTH 1200
+# define WIN_WIDTH_HALF 600
+# define WIN_HEIGHT 1200
+# define WIN_HEIGHT_HALF 600
 
 /*
 ** events (toggles)
@@ -134,13 +134,18 @@ typedef struct		s_color
 typedef struct		s_point
 {
 	int				color;
-	int				color_begin;
+	int				color_outside;
 	int				color_middle;
-	int				color_end;
+	int				color_inside;
 	int				x;
 	int				y;
+	double			position_x;
+	double			position_y;
+	double			c_real;
+	double			c_imaginary;
 	double			move_x;
 	double			move_y;
+	int				iterations;
 }					t_point;
 
 typedef struct		s_setup
@@ -181,9 +186,7 @@ void			put_pixel(t_setup *start, int x, int y, int color);
 /*
 **	color
 */
-double			get_percentage(int start, int end, int current);
 int				get_intensity(int start, int end, double percentage);
-void			create_color_for_pixel(t_setup *start);
 int				pick_color_iterations(t_setup *start, int iterations,\
 				int max_iter);
 int				pick_color(int start_color, int end_color, double percentage);
