@@ -2,6 +2,9 @@
 
 ## Codam Coding College Fractol
 
+![Screen Shot 2021-06-29 at 20 36 01](https://user-images.githubusercontent.com/28932387/123850970-efc56400-d91a-11eb-926f-9023c6619a40.png)
+
+
 ### Description
 fract'ol is a program written in C that displays a fractal of the users choice. The program allows the user to manipulate the displayed fractal and change between the four different fractals handled by the program as instructed by a user interface. The fractals available for this project are Mandelbrot, Julia, Burning Ship and Mandelbrot.
 The purpose of this project was to gain a better understanding of miniLibX library, to discover and use the mathematical notion of complex numbers, and to take a peak at the concept of optimzation in computer graphics through multithreading.
@@ -49,3 +52,12 @@ To delete executable from directory, run:
 <code>
 $ make fclean
 </code>
+
+### Fractals:
+
+#### Madelbrot
+![Screen Shot 2021-06-29 at 20 35 11](https://user-images.githubusercontent.com/28932387/123851008-fd7ae980-d91a-11eb-8970-501be4a2df57.png)
+
+#### Julia
+![Screen Shot 2021-06-29 at 20 34 35](https://user-images.githubusercontent.com/28932387/123851034-08357e80-d91b-11eb-8d2d-eb10bedad39f.png)
+
