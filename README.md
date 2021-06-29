@@ -2,6 +2,7 @@
 
 ## Codam Coding College Fractol
 
+Burning Ship Fractol
 ![Screen Shot 2021-06-29 at 20 36 01](https://user-images.githubusercontent.com/28932387/123850970-efc56400-d91a-11eb-926f-9023c6619a40.png)
 
 
@@ -55,7 +56,7 @@ $ make fclean
 
 ### Fractals:
 
-#### Madelbrot
+#### Mandelbrot
 ![Screen Shot 2021-06-29 at 20 35 11](https://user-images.githubusercontent.com/28932387/123851008-fd7ae980-d91a-11eb-8970-501be4a2df57.png)
 
 #### Julia
